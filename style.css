@@ -383,6 +383,19 @@ h1 {
   --brand-rgb: 36, 41, 47;
 }
 
+/* Preserve Vantage's two-tone icon on a neutral circular badge. */
+.social-link--vantage {
+  --icon-shell-background: #ffffff;
+  --icon-shell-hover-background: #f8fafc;
+}
+
+.vantage-icon {
+  width: auto;
+  height: 1.12rem;
+  display: block;
+  filter: none;
+}
+
 .icon-shell {
   width: 2.125rem;
   height: 2.125rem;
@@ -390,7 +403,7 @@ h1 {
   place-items: center;
   border-radius: 50%;
   color: rgb(var(--brand-rgb));
-  background: rgba(var(--brand-rgb), 0.12);
+  background: var(--icon-shell-background, rgba(var(--brand-rgb), 0.12));
   transition:
     color var(--transition-fast),
     background-color var(--transition-fast),
@@ -434,7 +447,7 @@ h1 {
 }
 
 .social-link:focus-visible .icon-shell {
-  background: rgba(var(--brand-rgb), 0.2);
+  background: var(--icon-shell-hover-background, rgba(var(--brand-rgb), 0.2));
   transform: scale(1.06);
 }
 
@@ -453,7 +466,7 @@ h1 {
   }
 
   .social-link:hover .icon-shell {
-    background: rgba(var(--brand-rgb), 0.2);
+    background: var(--icon-shell-hover-background, rgba(var(--brand-rgb), 0.2));
     transform: scale(1.06);
   }
 
